@@ -2,77 +2,48 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Inventario JSON</title>
-    <style>
-        table { border-collapse: collapse; width: 100%; font-family: sans-serif; }
-        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-        th { background-color: #e2f0d9; }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Inventario de Red</title>
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
-    <h2>Inventario de Hardware de Red (JSON + JS)</h2>
-    
-    <table id="tabla-inventario">
-        <thead>
-            <tr>
-                <th>Tipo</th>
-                <th>Marca</th>
-                <th>Modelo</th>
-                <th>IP</th>
-                <th>Estado</th>
-            </tr>
-        </thead>
-        <tbody id="cuerpo-tabla">
-        </tbody>
-    </table>
+<div class="container">
+    <div class="header">
+        <h1>Centro de Datos - Inventario</h1>
+        <p>Total equipos: <strong id="contadorEquipos">0</strong></p>
+    </div>
 
-    <script>
-        // 1. Datos en formato JSON
-        const inventarioJSON = [
-            {
-                "tipo": "Router",
-                "marca": "Cisco",
-                "modelo": "ISR 4321",
-                "ip": "192.168.1.1",
-                "estado": "Activo"
-            },
-            {
-                "tipo": "Switch",
-                "marca": "Aruba",
-                "modelo": "2930F",
-                "ip": "192.168.1.2",
-                "estado": "Activo"
-            },
-            {
-                "tipo": "Firewall",
-                "marca": "Fortinet",
-                "modelo": "FortiGate 60F",
-                "ip": "192.168.1.254",
-                "estado": "Mantenimiento"
-            }
-        ];
+    <div class="controls">
+        <input type="text" id="buscador" placeholder="Buscar por marca, modelo o IP...">
+        <select id="filtroTipo">
+            <option value="Todos">Todos los tipos</option>
+            <option value="Router">Routers</option>
+            <option value="Switch">Switches</option>
+            <option value="Firewall">Firewalls</option>
+            <option value="Access Point">Access Points</option>
+            <option value="Servidor">Servidores</option>
+        </select>
+    </div>
 
-        // 2. Referencia al cuerpo de la tabla en el HTML
-        const tbody = document.getElementById("cuerpo-tabla");
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tipo</th>
+                    <th>Marca & Modelo</th>
+                    <th>Dirección IP</th>
+                    <th>Ubicación</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpoTabla">
+                </tbody>
+        </table>
+    </div>
+</div>
 
-        // 3. Iterar sobre el JSON y construir las filas
-        inventarioJSON.forEach(equipo => {
-            // Creamos una nueva fila
-            const tr = document.createElement("tr");
-
-            // Insertamos el HTML interno con los datos del JSON
-            tr.innerHTML = `
-                <td>${equipo.tipo}</td>
-                <td>${equipo.marca}</td>
-                <td>${equipo.modelo}</td>
-                <td>${equipo.ip}</td>
-                <td>${equipo.estado}</td>
-            `;
-
-            // Añadimos la fila a la tabla
-            tbody.appendChild(tr);
-        });
-    </script>
+<script src="app.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,9 @@
+[
+    { "id": "R-CORE-01", "tipo": "Router", "marca": "Cisco", "modelo": "ASR 1001-X", "ip": "10.0.0.1", "ubicacion": "Rack A1", "estado": "Activo" },
+    { "id": "SW-DIS-01", "tipo": "Switch", "marca": "Aruba", "modelo": "CX 6200F", "ip": "10.0.0.2", "ubicacion": "Rack A2", "estado": "Activo" },
+    { "id": "SW-ACC-03", "tipo": "Switch", "marca": "Cisco", "modelo": "Catalyst 9200", "ip": "10.0.1.15", "ubicacion": "Piso 2 - IDF", "estado": "Inactivo" },
+    { "id": "FW-EDGE-01", "tipo": "Firewall", "marca": "Palo Alto", "modelo": "PA-3220", "ip": "203.0.113.254", "ubicacion": "Rack A1", "estado": "Activo" },
+    { "id": "AP-WIFI-12", "tipo": "Access Point", "marca": "Ubiquiti", "modelo": "U6-Pro", "ip": "10.0.5.12", "ubicacion": "Sala de Juntas", "estado": "Activo" },
+    { "id": "AP-WIFI-13", "tipo": "Access Point", "marca": "Ubiquiti", "modelo": "U6-Pro", "ip": "10.0.5.13", "ubicacion": "Recepción", "estado": "Inactivo" },
+    { "id": "SRV-VM-01", "tipo": "Servidor", "marca": "Dell", "modelo": "PowerEdge R740", "ip": "10.0.10.50", "ubicacion": "Rack B1", "estado": "Activo" }
+]
