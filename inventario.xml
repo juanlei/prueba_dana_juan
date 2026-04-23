@@ -1,22 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="inventario.xsl"?>
 <inventario>
-    <equipo>
-        <id>HW-001</id>
-        <tipo>Router</tipo>
-        <modelo>Cisco ISR 4431</modelo>
-        <estado>Activo</estado>
-    </equipo>
-    <equipo>
-        <id>HW-002</id>
-        <tipo>Switch</tipo>
-        <modelo>Juniper EX4300</modelo>
-        <estado>En mantenimiento</estado>
-    </equipo>
-    <equipo>
-        <id>HW-003</id>
-        <tipo>Firewall</tipo>
-        <modelo>Fortinet FG-100F</modelo>
-        <estado>Activo</estado>
-    </equipo>
-</inventario>
+    <metadata>
+        <empresa>TechSolutions S.A.</empresa>
+        <departamento>Infraestructura y Redes</departamento>
+        <responsable>Administrador de Sistemas</responsable>
+        <fecha_reporte>2026-04-23</fecha_reporte>
+    </metadata>
+    
+    <equipos>
+        <equipo id="HW-001">
+            <tipo>Router</tipo>
+            <marca>Cisco</marca>
+            <modelo>ISR 4321</modelo>
+            <num_serie>FGL2345ABC</num_serie>
+            <red>
+                <ip_gestion>192.168.1.1</ip_gestion>
+                <mac>00:1A:2B:3C:4D:5E</mac>
+            </red>
+            <ubicacion>
+                <edificio>Sede Central</edificio>
+                <sala>CPD-1</sala>
+                <rack>Rack A-01</rack>
+            </ubicacion>
+            <mantenimiento>
+                <estado>Activo</estado>
+                <ultima_revision>2026-03-15</ultima_revision>
+                <garantia_hasta>2028-03-15</garantia_hasta>
+            </mantenimiento>
+        </equipo>
+
+        <equipo id="HW-002">
+            <tipo>Switch</tipo>
+            <marca>Aruba</marca>
+            <modelo>2930F 48G</modelo>
+            <num_serie>SG98765XYZ</num_serie>
+            <red>
+                <ip_gestion>192.168.1.2</ip_gestion>
+                <mac>A1:B2:C3:D4:E5:F6</mac>
+            </red>
+            <ubicacion>
+                <edificio>Sede Central</edificio>
+                <sala>Planta 2 - Cuarto de Comunicaciones</sala>
+                <rack>Rack B-04</rack>
+            </ubicacion>
+            <mantenimiento>
+                <estado>Activo</estado>
+                <ultima_revision>2026-04-10</ultima_revision>
+                <garantia_hasta>2027-04-10</garantia_hasta>
+            </mantenimiento>
+        </equipo>
+
+        <equipo id="HW-003">
+            <tipo>Firewall</tipo>
+            <marca>Fortinet</marca>
+            <modelo>FortiGate 60F</modelo>
+            <num_serie>FGT60F-998877</num_serie>
+            <red>
+                <ip_gestion>192.168.1.254</ip_gestion>
+                <mac>11:22:33:44:55:66</mac>
+            </red>
+            <ubicacion>
+                <edificio>Sede Central</edificio>
+                <sala>CPD-1</sala>
+                <rack>Rack A-02</rack>
+            </ubicacion>
+            <mantenimiento>
+                <estado>Mantenimiento</estado>
+                <ultima_revision>2026-04-20</ultima_revision>
+                <garantia_hasta>2026-12-31</garantia_hasta>
+            </mantenimiento>
+        </equipo>
+        
+        <equipo id="HW-004">
+            <tipo>Access Point</tipo>
+            <marca>Ubiquiti</marca>
+            <modelo>UniFi 6 Pro</modelo>
+            <num_serie>U6P-112233</num_serie>
+            <red>
+                <ip_gestion>192.168.1.50</ip_gestion>
+                <mac>AA:BB:CC:DD:EE:FF</mac>
+            </red>
+            <ubicacion>
+                <edificio>Edificio Anexo</edificio>
+                <sala>Recepción</sala>
+                <rack>Techo</rack>
+            </ubicacion>
+            <mantenimiento>
+                <estado>Inactivo</estado>
+                <ultima_revision>2025-11-05</ultima_revision>
+                <garantia_hasta>2025-11-05</garantia_hasta>
