@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="inventario.xsl"?>
 <inventario>
     <metadata>
-        <empresa>TechSolutions S.A.</empresa>
+        <empresa>TechSolutions S.A.222</empresa>
         <departamento>Infraestructura y Redes</departamento>
         <responsable>Administrador de Sistemas</responsable>
         <fecha_reporte>2026-04-23</fecha_reporte>
