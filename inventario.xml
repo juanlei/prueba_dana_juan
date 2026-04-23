@@ -90,3 +90,7 @@
                 <estado>Inactivo</estado>
                 <ultima_revision>2025-11-05</ultima_revision>
                 <garantia_hasta>2025-11-05</garantia_hasta>
+            </mantenimiento>
+        </equipo>
+    </equipos>
+</inventario>
