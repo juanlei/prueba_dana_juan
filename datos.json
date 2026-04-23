@@ -1,0 +1,6 @@
+[
+    { "id": "R01-4321", "tipo": "Router", "marca": "Cisco", "modelo": "ISR 4321", "ip": "192.168.1.1", "ubicacion": "Rack 1, Main Hall", "estado": "Activo" },
+    { "id": "SW01-2930", "tipo": "Switch", "marca": "Aruba", "modelo": "2930F", "ip": "192.168.1.2", "ubicacion": "Rack 2, Data Room", "estado": "Activo" },
+    { "id": "FW01-60F", "tipo": "Firewall", "marca": "Fortinet", "modelo": "FortiGate 60F", "ip": "192.168.1.254", "ubicacion": "Network Edge, Room 3", "estado": "Mantenimiento" },
+    { "id": "AP01-U6", "tipo": "Access Point", "marca": "Ubiquiti", "modelo": "U6-Pro", "ip": "192.168.1.10", "ubicacion": "Recepción", "estado": "Inactivo" }
+]
