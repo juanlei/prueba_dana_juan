@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="inventario.xsl"?>
+<inventario>
+    <equipo>
+        <id>HW-001</id>
+        <tipo>Router</tipo>
+        <modelo>Cisco ISR 4431</modelo>
+        <estado>Activo</estado>
+    </equipo>
+    <equipo>
+        <id>HW-002</id>
+        <tipo>Switch</tipo>
+        <modelo>Juniper EX4300</modelo>
+        <estado>En mantenimiento</estado>
+    </equipo>
+    <equipo>
+        <id>HW-003</id>
+        <tipo>Firewall</tipo>
+        <modelo>Fortinet FG-100F</modelo>
+        <estado>Activo</estado>
+    </equipo>
+</inventario>
