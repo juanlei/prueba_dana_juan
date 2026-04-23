@@ -9,21 +9,28 @@
 <body>
 
 <div class="container">
-    <div class="header">
-        <h1>Centro de Datos - Inventario</h1>
-        <p>Total equipos: <strong id="contadorEquipos">0</strong></p>
+    <div class="header-top">
+        <h1>Panel de Inventario de Hardware de Red</h1>
+        <button class="btn-add">Añadir nuevo dispositivo ➕</button>
     </div>
 
-    <div class="controls">
-        <input type="text" id="buscador" placeholder="Buscar por marca, modelo o IP...">
+    <div class="controls-bar">
+        <div class="search-box">
+            <input type="text" id="buscador" placeholder="🔍 Buscar hardware (Marca, Modelo, IP...)">
+            <button class="btn-add" id="btnLimpiar">Limpiar</button>
+        </div>
+        
         <select id="filtroTipo">
             <option value="Todos">Todos los tipos</option>
-            <option value="Router">Routers</option>
-            <option value="Switch">Switches</option>
-            <option value="Firewall">Firewalls</option>
-            <option value="Access Point">Access Points</option>
-            <option value="Servidor">Servidores</option>
+            <option value="Router">Router</option>
+            <option value="Switch">Switch</option>
+            <option value="Firewall">Firewall</option>
+            <option value="Access Point">Access Point</option>
         </select>
+
+        <div class="stats">
+            Dispositivos totales: <strong id="contadorEquipos" style="color: #1f2937; font-size: 1.1rem;">0</strong>
+        </div>
     </div>
 
     <div class="table-container">
@@ -31,8 +38,8 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Tipo</th>
-                    <th>Marca & Modelo</th>
+                    <th>Tipo de dispositivo</th>
+                    <th>Marca y modelo</th>
                     <th>Dirección IP</th>
                     <th>Ubicación</th>
                     <th>Estado</th>

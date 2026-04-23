@@ -1,13 +1,17 @@
 /* --- Variables de Diseño Moderno --- */
 :root {
-    --primary-color: #2563eb;
-    --bg-color: #f8fafc;
+    --primary-color: #1e3a8a; /* Azul oscuro corporativo */
+    --bg-color: #f3f4f6;
     --card-bg: #ffffff;
-    --text-main: #1e293b;
-    --text-muted: #64748b;
-    --border-color: #e2e8f0;
-    --success: #10b981;
-    --danger: #ef4444;
+    --text-main: #1f2937;
+    --text-muted: #6b7280;
+    --border-color: #e5e7eb;
+    
+    /* Colores de estado */
+    --success: #16a34a; /* Verde */
+    --warning: #d97706; /* Naranja/Mantenimiento */
+    --danger: #dc2626;  /* Rojo */
+    --inactive: #6b7280; /* Gris */
 }
 
 /* --- Estilos Base --- */
@@ -18,7 +22,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-main);
     padding: 2rem;
@@ -29,51 +33,82 @@ body {
     margin: 0 auto;
 }
 
-/* --- Encabezado y Controles --- */
-.header {
+/* --- Encabezado --- */
+.header-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2rem;
-}
-
-.header h1 {
-    font-size: 1.8rem;
-    color: var(--primary-color);
-}
-
-.controls {
-    display: flex;
-    gap: 1rem;
-    background: var(--card-bg);
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     margin-bottom: 1.5rem;
 }
 
-input, select {
-    padding: 0.6rem 1rem;
+.header-top h1 {
+    font-size: 1.75rem;
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.btn-add {
+    background-color: var(--card-bg);
     border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
     border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--text-main);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    transition: background-color 0.2s;
+}
+
+.btn-add:hover { background-color: #f9fafb; }
+
+/* --- Controles (Buscador y Filtro) --- */
+.controls-bar {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    background: var(--card-bg);
+    padding: 1rem;
+    border-radius: 8px 8px 0 0; /* Bordes redondeados solo arriba */
+    border: 1px solid var(--border-color);
+    border-bottom: none;
+}
+
+input, select {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
     font-size: 0.95rem;
     outline: none;
-    transition: border-color 0.3s;
 }
 
 input:focus, select:focus {
     border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(30, 58, 138, 0.1);
 }
 
-input {
+.search-box {
     flex-grow: 1;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 400px;
+}
+
+.stats {
+    margin-left: auto;
+    font-size: 0.9rem;
+    color: var(--text-muted);
 }
 
 /* --- Tabla Moderna --- */
 .table-container {
     background: var(--card-bg);
-    border-radius: 8px;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    border-radius: 0 0 8px 8px; /* Bordes redondeados solo abajo */
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
     overflow-x: auto;
 }
 
@@ -84,25 +119,37 @@ table {
 }
 
 th, td {
-    padding: 1rem;
+    padding: 1rem 1.25rem;
     border-bottom: 1px solid var(--border-color);
+    white-space: nowrap;
 }
 
 th {
-    background-color: #f1f5f9;
-    font-weight: 600;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 0.05em;
+    background-color: var(--primary-color);
+    font-weight: 500;
+    color: white;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+}
+
+/* Efecto Cebra para las filas */
+tbody tr:nth-child(even) {
+    background-color: #f9fafb;
 }
 
 tbody tr:hover {
-    background-color: #f8fafc;
+    background-color: #f3f4f6;
+}
+
+td {
+    font-size: 0.95rem;
 }
 
 /* --- Badges de Estado --- */
 .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
     padding: 0.25rem 0.75rem;
     border-radius: 9999px;
     font-size: 0.85rem;
@@ -111,10 +158,11 @@ tbody tr:hover {
 }
 
 .badge.activo { background-color: var(--success); }
-.badge.inactivo { background-color: var(--danger); }
+.badge.mantenimiento { background-color: var(--warning); color: #fff;}
+.badge.inactivo { background-color: var(--inactive); }
 
 .empty-state {
     text-align: center;
-    padding: 2rem;
+    padding: 3rem;
     color: var(--text-muted);
 }
