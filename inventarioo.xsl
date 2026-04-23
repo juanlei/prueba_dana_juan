@@ -4,27 +4,37 @@
         <html>
             <head>
                 <style>
-                    body { font-family: 'Segoe UI', sans-serif; margin: 40px; background: #f4f7f6; }
-                    .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-                    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-                    th { background: #2c3e50; color: white; padding: 12px; }
-                    td { padding: 12px; border-bottom: 1px solid #eee; }
-                    .status-Activo { color: green; font-weight: bold; }
-                    .status-Mantenimiento { color: orange; font-weight: bold; }
+                    /* Diseño General */
+                    body { font-family: 'Segoe UI', sans-serif; background: #f4f7f6; display: flex; justify-content: center; padding: 50px; }
+                    .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 80%; }
+                    
+                    /* Tabla Profesional */
+                    table { width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 20px; }
+                    th { background-color: #2c3e50; color: white; padding: 15px; text-align: left; text-transform: uppercase; font-size: 0.85em; }
+                    td { padding: 15px; border-bottom: 1px solid #eee; color: #555; }
+                    
+                    /* Efecto hover en filas */
+                    tr:hover { background-color: #f9f9f9; }
+                    
+                    /* Estilo para el estado */
+                    .estado-Activo { color: #27ae60; font-weight: bold; }
+                    .estado-Mantenimiento { color: #e67e22; font-weight: bold; }
                 </style>
             </head>
             <body>
                 <div class="card">
-                    <h1>Inventario: <xsl:value-of select="inventario/metadata/empresa"/></h1>
+                    <h2>Inventario de Hardware</h2>
                     <table>
-                        <tr><th>ID</th><th>Modelo</th><th>Tipo</th><th>Estado</th></tr>
-                        <xsl:for-each select="inventario/equipos/equipo">
+                        <tr>
+                            <th>ID</th><th>Tipo</th><th>Modelo</th><th>Estado</th>
+                        </tr>
+                        <xsl:for-each select="inventario/equipo">
                             <tr>
-                                <td><xsl:value-of select="@id"/></td>
-                                <td><xsl:value-of select="modelo"/></td>
+                                <td><xsl:value-of select="id"/></td>
                                 <td><xsl:value-of select="tipo"/></td>
+                                <td><xsl:value-of select="modelo"/></td>
                                 <td>
-                                    <span class="status-{estado}">
+                                    <span class="estado-{estado}">
                                         <xsl:value-of select="estado"/>
                                     </span>
                                 </td>
