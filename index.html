@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio | Proyecto de Inventario</title>
+    <link rel="stylesheet" href="estilos.css">
+    <style>
+        /* Estilos específicos para el índice, integrados con tus variables CSS */
+        .index-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .index-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .index-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+        }
+        .index-card h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        .index-card p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+        .btn-link {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 0.6rem 1.2rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+        .btn-link:hover {
+            background-color: #152c69; /* Un azul un poco más oscuro */
+        }
+        .project-info {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-top">
+        <h1>Índice del Proyecto - Trabajo de Clase</h1>
+    </div>
+
+    <p style="color: var(--text-muted); font-size: 1.1rem;">
+        Bienvenido al sistema de gestión de hardware. Selecciona el módulo que deseas visualizar:
+    </p>
+
+    <div class="index-grid">
+        <div class="index-card">
+            <h2>💻 Panel Interactivo</h2>
+            <p>Dashboard dinámico que carga el inventario de hardware de red utilizando <strong>JavaScript (app.js)</strong> y datos en formato <strong>JSON (datos.json)</strong>. Incluye buscador y filtros funcionales.</p>
+            <a href="juan.html" class="btn-link">Ir al Panel Interactivo</a>
+        </div>
+
+        <div class="index-card">
+            <h2>📄 Inventario Estático</h2>
+            <p>Tabla de inventario generada mediante transformaciones <strong>XSL</strong> a partir de un archivo de datos estructurado en <strong>XML</strong>, mostrando metadatos e información del hardware.</p>
+            <a href="inventario.xml" class="btn-link">Ver Inventario XML</a>
+        </div>
+    </div>
+
+    <div class="project-info">
+        <p>Proyecto alojado en GitHub. Revisa el archivo <code>README.md</code> para más información sobre la estructura.</p>
+    </div>
+</div>
+
+</body>
+</html>
