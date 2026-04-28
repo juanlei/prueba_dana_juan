@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="inventario.xsl"?>
+<?xml-stylesheet type="text/xsl" href="inventarioo.xsl"?>
 <inventario>
     <metadata>
         <empresa>TechSolutions S.A.222</empresa>
@@ -34,20 +34,11 @@
             <tipo>Switch</tipo>
             <marca>Aruba</marca>
             <modelo>2930F 48G</modelo>
-            <num_serie>SG98765XYZ</num_serie>
             <red>
                 <ip_gestion>192.168.1.2</ip_gestion>
-                <mac>A1:B2:C3:D4:E5:F6</mac>
             </red>
-            <ubicacion>
-                <edificio>Sede Central</edificio>
-                <sala>Planta 2 - Cuarto de Comunicaciones</sala>
-                <rack>Rack B-04</rack>
-            </ubicacion>
             <mantenimiento>
                 <estado>Activo</estado>
-                <ultima_revision>2026-04-10</ultima_revision>
-                <garantia_hasta>2027-04-10</garantia_hasta>
             </mantenimiento>
         </equipo>
 
@@ -55,41 +46,11 @@
             <tipo>Firewall</tipo>
             <marca>Fortinet</marca>
             <modelo>FortiGate 60F</modelo>
-            <num_serie>FGT60F-998877</num_serie>
             <red>
                 <ip_gestion>192.168.1.254</ip_gestion>
-                <mac>11:22:33:44:55:66</mac>
             </red>
-            <ubicacion>
-                <edificio>Sede Central</edificio>
-                <sala>CPD-1</sala>
-                <rack>Rack A-02</rack>
-            </ubicacion>
             <mantenimiento>
                 <estado>Mantenimiento</estado>
-                <ultima_revision>2026-04-20</ultima_revision>
-                <garantia_hasta>2026-12-31</garantia_hasta>
-            </mantenimiento>
-        </equipo>
-        
-        <equipo id="HW-004">
-            <tipo>Access Point</tipo>
-            <marca>Ubiquiti</marca>
-            <modelo>UniFi 6 Pro</modelo>
-            <num_serie>U6P-112233</num_serie>
-            <red>
-                <ip_gestion>192.168.1.50</ip_gestion>
-                <mac>AA:BB:CC:DD:EE:FF</mac>
-            </red>
-            <ubicacion>
-                <edificio>Edificio Anexo</edificio>
-                <sala>Recepción</sala>
-                <rack>Techo</rack>
-            </ubicacion>
-            <mantenimiento>
-                <estado>Inactivo</estado>
-                <ultima_revision>2025-11-05</ultima_revision>
-                <garantia_hasta>2025-11-05</garantia_hasta>
             </mantenimiento>
         </equipo>
     </equipos>
