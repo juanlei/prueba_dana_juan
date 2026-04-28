@@ -6,85 +6,162 @@
     <title>Inicio | Proyecto de Inventario</title>
     <link rel="stylesheet" href="estilos.css">
     <style>
-        /* Estilos específicos para el índice, integrados con tus variables CSS */
+        /* --- Mejoras visuales para el índice --- */
+        
+        /* Centrado de la página entera */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #e2e8f0; /* Un gris un poco más oscuro para contrastar con la caja */
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 20px 20px; /* Patrón de puntos moderno */
+        }
+
+        /* Contenedor principal tipo panel */
+        .container-index {
+            background: #ffffff;
+            max-width: 900px;
+            width: 90%;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        /* Animación de entrada */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .header-top {
+            text-align: center;
+            margin-bottom: 0.5rem;
+            justify-content: center;
+        }
+
+        .header-top h1 {
+            font-size: 2.2rem;
+            color: var(--primary-color, #1e3a8a);
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--text-muted, #6b7280);
+            font-size: 1.15rem;
+            margin-bottom: 3rem;
+        }
+
         .index-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
+            gap: 2rem;
         }
+
         .index-card {
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
+            background: var(--card-bg, #ffffff);
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color, #e5e7eb);
             box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
+
         .index-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(30, 58, 138, 0.1); /* Sombra tintada en azul */
+            border-color: #bfdbfe;
         }
+
         .index-card h2 {
-            color: var(--primary-color);
+            color: var(--primary-color, #1e3a8a);
             margin-bottom: 1rem;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
+
         .index-card p {
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-            line-height: 1.5;
+            color: var(--text-muted, #6b7280);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            flex-grow: 1; /* Empuja el botón siempre al fondo */
         }
+
         .btn-link {
-            display: inline-block;
-            background-color: var(--primary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: var(--primary-color, #1e3a8a);
             color: #ffffff;
-            padding: 0.6rem 1.2rem;
+            padding: 0.75rem 1.5rem;
             text-decoration: none;
-            border-radius: 6px;
-            font-weight: 500;
-            transition: background-color 0.2s;
-        }
-        .btn-link:hover {
-            background-color: #152c69; /* Un azul un poco más oscuro */
-        }
-        .project-info {
-            margin-top: 3rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.2s;
             text-align: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
+        }
+
+        .btn-link:hover {
+            background-color: #152c69; 
+            transform: scale(1.02);
+        }
+
+        .project-info {
+            margin-top: 3.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color, #e5e7eb);
+            text-align: center;
+        }
+
+        .authors-badge {
+            display: inline-block;
+            background-color: #f3f4f6;
+            color: #374151;
+            padding: 0.5rem 1.2rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            border: 1px solid #e5e7eb;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
+<div class="container-index">
     <div class="header-top">
-        <h1>Índice del Proyecto - Trabajo de Clase</h1>
+        <h1>📊 Sistema de Inventario de Red</h1>
     </div>
 
-    <p style="color: var(--text-muted); font-size: 1.1rem;">
-        Bienvenido al sistema de gestión de hardware. Selecciona el módulo que deseas visualizar:
+    <p class="subtitle">
+        Selecciona el módulo que deseas visualizar para comenzar:
     </p>
 
     <div class="index-grid">
         <div class="index-card">
             <h2>💻 Panel Interactivo</h2>
-            <p>Dashboard dinámico que carga el inventario de hardware de red utilizando <strong>JavaScript (app.js)</strong> y datos en formato <strong>JSON (datos.json)</strong>. Incluye buscador y filtros funcionales.</p>
-            <a href="juan.html" class="btn-link">Ir al Panel Interactivo</a>
+            <p>Dashboard dinámico que carga el inventario de hardware de red utilizando <strong>JavaScript</strong> y datos en formato <strong>JSON</strong>. Incluye un buscador en tiempo real y filtros por tipo de dispositivo.</p>
+            <a href="juan.html" class="btn-link">Abrir Dashboard ➔</a>
         </div>
 
         <div class="index-card">
             <h2>📄 Inventario Estático</h2>
-            <p>Tabla de inventario generada mediante transformaciones <strong>XSL</strong> a partir de un archivo de datos estructurado en <strong>XML</strong>, mostrando metadatos e información del hardware.</p>
-            <a href="inventario.xml" class="btn-link">Ver Inventario XML</a>
+            <p>Tabla de inventario generada de forma nativa mediante transformaciones <strong>XSL</strong> a partir de un archivo de datos estructurado en <strong>XML</strong>, mostrando metadatos e información de hardware.</p>
+            <a href="inventario.xml" class="btn-link">Ver Documento XML ➔</a>
         </div>
     </div>
 
     <div class="project-info">
-        <p>REALIZADO POR DANIELA CARMONA Y JUAN LEIVA  2026</p>
+        <span class="authors-badge">REALIZADO POR DANIELA CARMONA Y JUAN LEIVA • 2026</span>
     </div>
 </div>
 
